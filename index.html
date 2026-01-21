@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080, initial-scale=1.0">
+    <title>交错核心好友杯S1对战抽签</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="background-container">
+        <div id="bg-image-1" class="bg-image"></div>
+        <div id="bg-image-2" class="bg-image"></div>
+        <div id="white-overlay"></div>
+    </div>
+
+    <div id="main-content">
+        <svg id="turntable-svg" width="1280" height="1080" viewBox="0 0 1280 1080">
+            <defs>
+                <filter id="blur-fix">
+
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="0" /> 
+                    
+                </filter>
+            </defs>
+            <g id="wheel-group"></g>
+            <polygon points="100,500 100,580 220,540" fill="#80FF80FF" stroke="#4D4D4DFF" stroke-width="5" />
+        </svg>
+
+        <div id="bg-controls">
+            <div class="slider-container vertical" style="left: 60px; top: 800px;">
+                <input type="range" id="blur-slider" min="0" max="100" value="0" orient="vertical">
+            </div>
+            <div class="slider-container horizontal" style="left: 80px; top: 1020px;">
+                <input type="range" id="opacity-slider" min="0" max="100" value="20">
+            </div>
+        </div>
+
+        <div id="match-panel">
+            <div id="panel-title">交战对手</div>
+
+            <div id="left-list" class="match-list">
+                <div class="list-header">红方 (奇数)</div>
+                <div class="list-content" id="left-content"></div>
+            </div>
+
+            <div id="right-list" class="match-list">
+                <div class="list-header">蓝方 (偶数)</div>
+                <div class="list-content" id="right-content"></div>
+            </div>
+
+            <div id="event-title">交错核心第一届好友杯对战抽签工具 (By Voice-of-Shadow)</div>
+        </div>
+    </div>
+
+    <div id="modal-overlay" class="hidden">
+        <div id="modal-content">
+            <div id="modal-inner">
+                <div id="modal-avatar"></div>
+                <div id="modal-text"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="drop-indicator" class="hidden">拖入参赛数据文件 (.txt)</div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
